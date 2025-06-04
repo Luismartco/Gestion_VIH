@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title>Registro</title></head>
+<body>
+  <h2>Registro</h2>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}<p style="color:red;">{{ messages[0] }}</p>{% endif %}
+  {% endwith %}
+  <form method="post">
+    <input name="nombre" placeholder="Nombre" required><br>
+    <input name="email" placeholder="Correo" required><br>
+    <input type="password" name="password" placeholder="Contraseña" required><br>
+
+    <label>Estado VIH:</label>
+    <select name="estado_vih" required>
+      <option value="Negativo">Negativo</option>
+      <option value="Positivo">Positivo</option>
+    </select><br>
+
+    <label>Fecha de última prueba (AAAA-MM-DD):</label>
+    <input type="date" name="ultima_prueba_fecha"><br>
+
+    <label>Carga viral:</label>
+    <select name="ultima_carga_viral">
+      <option value="">--Selecciona--</option>
+      <option value="Indetectable">Indetectable</option>
+      <option value="Detectable">Detectable</option>
+    </select><br>
+
+    <label>CD4 actual:</label>
+    <input type="number" name="cd4_actual" min="0"><br>
+
+    <label>Tratamiento actual:</label>
+    <input name="tratamiento_actual"><br>
+
+    <label>¿En control médico?:</label>
+    <input type="checkbox" name="en_control_medico"><br>
+
+    <button type="submit">Registrarse</button>
+  </form>
+
+    <a href="{{ url_for('login') }}">¿Ya tienes cuenta? Inicia sesión</a>
+    <a href="{{ url_for('consultar_token') }}">Consultar estado por token</a>
+    <a href="{{ url_for('index') }}">Volver al inicio</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>Consulta por Token</title></head>
+<body>
+  <h2>Consulta de estado por token</h2>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <p style="color:red;">{{ messages[0] }}</p>
+    {% endif %}
+  {% endwith %}
+
+  <form method="post">
+    <input name="token" placeholder="Ingresa el token" required>
+    <button type="submit">Consultar</button>
+  </form>
+</body>
+</html>
