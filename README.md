@@ -1,4 +1,4 @@
-# Aplicación Móvil para Consulta y Compartición Segura del Estado VIH
+# Aplicación web para Consulta y Compartición Segura del Estado VIH
 
 ## Descripción
 
