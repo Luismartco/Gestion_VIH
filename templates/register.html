@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head><title>Registro</title></head>
+<head>
+  <title>Registro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<header>
+    <h1>Registro</h1>
+</header>
 <body>
-  <h2>Registro</h2>
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}<p style="color:red;">{{ messages[0] }}</p>{% endif %}
-  {% endwith %}
-  <form method="post">
-    <input name="nombre" placeholder="Nombre" required><br>
-    <input name="email" placeholder="Correo" required><br>
-    <input type="password" name="password" placeholder="Contraseña" required><br>
+  <div class="container">
+    <h2>Registro</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}<p class="message">{{ messages[0] }}</p>{% endif %}
+    {% endwith %}
+    <form method="post">
+      <input name="nombre" placeholder="Nombre" required>
+      <input name="email" placeholder="Correo" required>
+      <input type="password" name="password" placeholder="Contraseña" required>
 
-    <label>Estado VIH:</label>
-    <select name="estado_vih" required>
-      <option value="Negativo">Negativo</option>
-      <option value="Positivo">Positivo</option>
-    </select><br>
+      <label>Estado VIH:</label>
+      <select name="estado_vih" required>
+        <option value="Negativo">Negativo</option>
+        <option value="Positivo">Positivo</option>
+      </select>
 
-    <label>Fecha de última prueba (AAAA-MM-DD):</label>
-    <input type="date" name="ultima_prueba_fecha"><br>
+      <label>Fecha de última prueba:</label>
+      <input type="date" name="ultima_prueba_fecha">
 
-    <label>Carga viral:</label>
-    <select name="ultima_carga_viral">
-      <option value="">--Selecciona--</option>
-      <option value="Indetectable">Indetectable</option>
-      <option value="Detectable">Detectable</option>
-    </select><br>
+      <label>Carga viral:</label>
+      <select name="ultima_carga_viral">
+        <option value="">--Selecciona--</option>
+        <option value="Indetectable">Indetectable</option>
+        <option value="Detectable">Detectable</option>
+      </select>
 
-    <label>CD4 actual:</label>
-    <input type="number" name="cd4_actual" min="0"><br>
+      <label>CD4 actual:</label>
+      <input type="number" name="cd4_actual" min="0">
 
-    <label>Tratamiento actual:</label>
-    <input name="tratamiento_actual"><br>
+      <label>Tratamiento actual:</label>
+      <input name="tratamiento_actual">
 
-    <label>¿En control médico?:</label>
-    <input type="checkbox" name="en_control_medico"><br>
+      <label>¿En control médico?:</label>
+      <input type="checkbox" name="en_control_medico">
 
-    <button type="submit">Registrarse</button>
-  </form>
+      <button type="submit">Registrarse</button>
+    </form>
 
-    <a href="{{ url_for('login') }}">¿Ya tienes cuenta? Inicia sesión</a>
-    <a href="{{ url_for('consultar_token') }}">Consultar estado por token</a>
+    <a href="{{ url_for('login') }}">¿Ya tienes cuenta? Inicia sesión</a><br>
+    <a href="{{ url_for('consultar_token') }}">Consultar estado por token</a><br>
     <a href="{{ url_for('index') }}">Volver al inicio</a>
+  </div>
+  <footer>
+  &copy; 2025 App VIH. Todos los derechos reservados. 
+  </footer>
 </body>
 </html>

@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head><title>Estado VIH</title></head>
+<head>
+  <title>Estado VIH</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
 <body>
-  <h2>Estado de VIH de {{ user[2] }}</h2>
-  <p><strong>Estado:</strong> {{ user[3] }}</p>
-  <p><strong>Última prueba:</strong> {{ user[4] or 'No registrada' }}</p>
-  <p><strong>Última carga viral:</strong> {{ user[5] or 'No registrada' }}</p>
-  <p><strong>CD4 actual:</strong> {{ user[6] if user[6] is not none else 'No disponible' }}</p>
-  <p><strong>Tratamiento actual:</strong> {{ user[7] or 'No especificado' }}</p>
-  <p><strong>¿En control médico?:</strong> {{ 'Sí' if user[8] else 'No' }}</p>
-  <a href="{{ url_for('index') }}">Volver al inicio</a>
+    <header>
+        <h1>Estado de VIH de {{ user[2] }}</h1>
+    </header>
+  <div class="container">
+    <p><strong>Estado:</strong> {{ user[3] }}</p>
+    <p><strong>Última prueba:</strong> {{ user[4] or 'No registrada' }}</p>
+    <p><strong>Última carga viral:</strong> {{ user[5] or 'No registrada' }}</p>
+    <p><strong>CD4 actual:</strong> {{ user[6] if user[6] is not none else 'No disponible' }}</p>
+    <p><strong>Tratamiento actual:</strong> {{ user[7] or 'No especificado' }}</p>
+    <p><strong>¿En control médico?:</strong> {{ 'Sí' if user[8] else 'No' }}</p>
+    <a href="{{ url_for('index') }}">Volver al inicio</a>
+  </div>
+  <footer>
+  &copy; 2025 App VIH. Todos los derechos reservados. 
+  </footer>
 </body>
 </html>
+

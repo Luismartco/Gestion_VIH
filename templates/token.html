@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head><title>Token generado</title></head>
+<head>
+  <title>Token generado</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script>
+    function copiarToken() {
+      const tokenText = document.getElementById('token');
+      navigator.clipboard.writeText(tokenText.textContent)
+        .then(() => alert('Token copiado al portapapeles'))
+        .catch(err => alert('Error al copiar: ' + err));
+    }
+  </script>
+</head>
+<header>
+        <h1>Token</h1>
+</header>
 <body>
-  <h3>Tu token dinámico es:</h3>
-  <p><code>{{ token }}</code></p>
-  <p>Este token es válido por 5 minutos.</p>
-  <a href="{{ url_for('dashboard') }}">Volver</a>
+  <div class="container">
+    <h3>Tu token dinámico es:</h3>
+    <div style="overflow-x: auto; max-width: 100%;">
+    <code id="token">{{ token }}</code>
+    </div>
+    <p>Este token es válido por 5 minutos.</p>
+    <button onclick="copiarToken()">Copiar token</button><br><br>
+    <a href="{{ url_for('dashboard') }}">Volver</a>
+  </div>
+  <footer>
+  &copy; 2025 App VIH. Todos los derechos reservados. 
+  </footer>
 </body>
 </html>
+

@@ -1,0 +1,100 @@
+/* styles.css */
+/* Estilos generales para body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #007BFF; /* Rojo VIH */
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  background-color: #007BFF;
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 0.9em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Para que el contenido no quede oculto tras el footer */
+body {
+  padding-bottom: 60px;
+}
+
+/* Enlaces en footer */
+footer a {
+  color: #ffcccb;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 500px;
+  margin: 60px auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2, h3 {
+  color: #333;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, select, button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  text-decoration: none;
+  color: #007BFF;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.message {
+  color: red;
+  text-align: center;
+}
